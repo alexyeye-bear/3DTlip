@@ -9,7 +9,7 @@ class Decoder3D(nn.Module):
         ch_mult = [64, 128, 256, 256, 512]
         num_resolutions = len(ch_mult)
         block_in = ch_mult[num_resolutions - 1]
-        curr_res = 64 // 2 ** (num_resolutions - 1)  # 假设输入为 64×64×64 的 latent
+        curr_res = 64 // 2 ** (num_resolutions - 1)  # 输入为 64×64×64 的 latent
 
         layers = [nn.Conv3d(args.latent_dim, block_in, kernel_size=3, stride=1, padding=1),
                   ResidualBlock3D(block_in, block_in),
@@ -36,10 +36,9 @@ class Decoder3D(nn.Module):
     def forward(self, x):
         return self.model(x)
 
-# 定义一个简单的参数容器
 class Args:
     latent_dim = 256
-    image_channels = 1  # 通常为 1（医学图像）或 3（彩色）
+    image_channels = 1 
 
 if __name__ == "__main__":
     args = Args()
