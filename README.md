@@ -1,13 +1,15 @@
 # 3DTlip
-combine 3DVQ and contrastive learning
+Combine 3D VQ and contrastive learning.
 
 ## Training
 
-### Stage1 Train bi-directional transformer
-train vq part
+### Stage 1: Train bidirectional Transformer
+
+Train VQ part:
+
 ```bash
 python train_vq.py
-
+```
 
 train transformer part: use any MLM modeling you like
 
