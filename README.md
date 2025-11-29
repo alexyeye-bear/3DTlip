@@ -1,4 +1,4 @@
-# 3DTlip
+# Tlip3D
 Combine 3D VQ and contrastive learning.
 
 ## Training
